@@ -9,7 +9,7 @@ width, height = 67, 100
 #rgb were the worng way round, this fixes it
 col_adjust = np.matrix('255 0 0; 0 0 225; 0 225 0')
 col_adjust = col_adjust.I
-im = Image.open('photo37.jpg')
+im = Image.open('input.jpg')
 im = im.rotate(90, expand=True)
 im = im.resize((width, height), PIL.Image.ANTIALIAS)
 imdata = list(im.getdata())
@@ -103,10 +103,10 @@ def add_rgb_squares(width, height, breakdowns):
 
 im3 = Image.new(im.mode, (im.size[0]*6, im.size[1]*6))
 im3.putdata(add_rgb_squares(width, height, rgb_squares))
-im3.save('swrilahh.png')
+im3.save('output.png')
 
 
 im2 = Image.new(im.mode, im.size)
 im2.putdata(preview)
 
-im2.save('swrila.jpg')
+im2.save('output.jpg')
